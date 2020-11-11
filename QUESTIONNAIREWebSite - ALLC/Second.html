@@ -1,0 +1,28 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title> "Second page"</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body style="text-align:center;">
+
+    <h1>Second page</h1>
+    <p id="Message"></p>
+
+    <!--<iframe src="https://www.premiumpackaging.co.th/QuestionnaireAPI/First.html" height="500" width="300" title="Iframe Example" id="iframe" style="display:none;"></iframe>-->
+    <iframe src="http://localhost:55159/First.html" height="500" width="300" title="Iframe Example" id="iframe" style="display:none;"></iframe>
+    <script>
+
+
+        // Receive message from the iFrame
+
+        window.onmessage = function (e) {
+            document.getElementById("Message").innerHTML = e.data
+            console.log("e.data", e.data)
+        };
+
+    </script>
+
+</body>
+</html>

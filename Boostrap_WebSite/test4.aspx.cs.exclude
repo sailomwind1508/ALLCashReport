@@ -1,0 +1,249 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Report_ClassLibrary;
+using System.Collections;
+using System.IO;
+using ClosedXML.Excel;
+
+public partial class test4 : System.Web.UI.Page
+{
+    Dictionary<string, bool> UserList = new Dictionary<string, bool>();
+    ReportFilter rft = new ReportFilter();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        if (!IsPostBack)
+        {
+
+                try
+                {
+                    using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString))
+                    {
+                        cn.Open();
+
+                        SqlCommand cmd = null;
+
+                        cmd = new SqlCommand("proc_MonthlySalesSumReport_GetData_SalePreriod", cn);
+
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@BranchID", "103"));
+                    cmd.Parameters.Add(new SqlParameter("@VAN_ID", "V01"));
+                    cmd.Parameters.Add(new SqlParameter("@SalAreaID", "103M001"));
+                    cmd.Parameters.Add(new SqlParameter("@PostingDateFrom", "20190701"));
+                    cmd.Parameters.Add(new SqlParameter("@PostingDateTo", "20190731"));
+
+                    cmd.CommandTimeout = 0;
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        da.Fill(ds, "SalesPeriodReport");
+                        DataTable dt = ds.Tables["SalesPeriodReport"];
+
+                        ViewState["SalesPeriodReport"] = dt;
+
+                        cn.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Helper.WriteLog(ex.Message);
+                    throw ex;
+                }
+
+                BindGridView();
+            
+        }
+    }
+
+    private void BindGridView()
+    {
+        try
+        {
+            if (ViewState["SalesPeriodReport"] != null)
+            {
+                grdSalesPeriod.HeaderStyle.CssClass = "header-center";
+
+                grdSalesPeriod.DataSource = (DataTable)ViewState["SalesPeriodReport"];
+
+                grdSalesPeriod.DataBind();
+
+            }
+        }
+        catch (Exception ex)
+        {
+            Helper.WriteLog(ex.Message);
+            throw ex;
+        }
+    }
+
+    protected void grdSalesPeriod_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        grdSalesPeriod.PageIndex = e.NewPageIndex;
+        BindGridView();
+    }
+
+    protected void grdSalesPeriod_RowCreated(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.Header)
+        {
+            foreach (TableCell tc in e.Row.Cells)
+            {
+                if (tc.HasControls())
+                {
+                    // search for the header link
+                    LinkButton lnk = (LinkButton)tc.Controls[0];
+
+                    string sortDir = ViewState["SortDirection"] != null ? ViewState["SortDirection"].ToString() : "ASC";
+                    string sortBy = ViewState["SortExpression"] != null ? ViewState["SortExpression"].ToString() : "---";
+
+                    if (lnk != null && sortBy == lnk.CommandArgument)
+                    {
+                        string sortArrow = sortDir == "ASC" ? " &#9650;" : " &#9660;";
+                        lnk.Text += sortArrow;
+                    }
+                }
+            }
+        }
+    }
+
+    protected void grdSalesPeriod_Sorting(object sender, GridViewSortEventArgs e)
+    {
+        GridViewSortExpression = e.SortExpression;
+        int pageIndex = grdSalesPeriod.PageIndex;
+        grdSalesPeriod.DataSource = SortDataTable((DataTable)ViewState["SalesPeriodReport"], false);
+        grdSalesPeriod.DataBind();
+        for (int i = 0; i < grdSalesPeriod.Columns.Count - 1; i++)
+        {
+            string ht = ((LinkButton)grdSalesPeriod.HeaderRow.Cells[i].Controls[0]).Text;
+            if (ht == e.SortExpression)
+            {
+                TableCell tableCell = grdSalesPeriod.HeaderRow.Cells[i];
+                Image img = new Image();
+                img.ImageUrl = (GridViewSortDirection == "ASC") ? "~/Images/asc.gif" : "~/Images/desc.gif";
+                tableCell.Controls.Add(img);
+            }
+        }
+
+        grdSalesPeriod.PageIndex = pageIndex;
+    }
+
+    private string GridViewSortDirection
+    {
+        get { return ViewState["SortDirection"] as string ?? "ASC"; }
+        set { ViewState["SortDirection"] = value; }
+    }
+
+    private string GridViewSortExpression
+    {
+        get { return ViewState["SortExpression"] as string ?? string.Empty; }
+        set { ViewState["SortExpression"] = value; }
+    }
+
+    protected DataView SortDataTable(DataTable dataTable, bool isPageIndexChanging)
+    {
+        if (dataTable != null)
+        {
+            DataView dataView = new DataView(dataTable);
+            if (GridViewSortExpression != string.Empty)
+            {
+                if (isPageIndexChanging)
+                {
+                    dataView.Sort = string.Format("{0} {1}", GridViewSortExpression, GridViewSortDirection);
+                }
+                else
+                {
+                    dataView.Sort = string.Format("{0} {1}", GridViewSortExpression, GetSortDirection());
+                }
+            }
+            return dataView;
+        }
+        else
+        {
+            return new DataView();
+        }
+    }
+
+    private string GetSortDirection()
+    {
+        switch (GridViewSortDirection)
+        {
+            case "ASC":
+                GridViewSortDirection = "DESC";
+                break;
+            case "DESC":
+                GridViewSortDirection = "ASC";
+                break;
+        }
+        return GridViewSortDirection;
+    }
+
+    protected void grdSalesPeriod_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+
+    }
+
+    protected void grdSalesPeriod_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        decimal result;
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            for (int i = 0; i < e.Row.Cells.Count; i++)
+            {
+                e.Row.Cells[i].CssClass = "row-nowarp";
+                if (i > 4)
+                {
+                    if (decimal.TryParse(e.Row.Cells[i].Text, out result))
+                    {
+                        e.Row.Cells[i].CssClass = "row-number";
+                        e.Row.Cells[i].Text = String.Format("{0, 0:N2}", result);
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    protected void linkExportExcel_Click(object sender, EventArgs e)
+    {
+        if (ViewState["SalesPeriodReport"] != null)
+        {
+            var _dt = (DataTable)ViewState["SalesPeriodReport"];
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(_dt, "SalesPeriodReport");
+
+                Response.Clear();
+                Response.Buffer = true;
+                Response.Charset = "";
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                Response.AddHeader("content-disposition", "attachment;filename=SalesPeriodReport.xlsx");
+                using (MemoryStream MyMemoryStream = new MemoryStream())
+                {
+                    wb.SaveAs(MyMemoryStream);
+                    MyMemoryStream.WriteTo(Response.OutputStream);
+                    Response.Flush();
+                    Response.End();
+                }
+            }
+
+
+            //Response.ContentType = "application/vnd.ms-excel";
+            //Response.AddHeader("content-disposition", "attachment; filename=test.csv");
+            //Response.TransmitFile(Server.MapPath("~/Uploads/test.csv"));
+            //Response.End();
+
+            //_dt.ExportToExcel(ExcelFilePath);
+        }
+    }
+}

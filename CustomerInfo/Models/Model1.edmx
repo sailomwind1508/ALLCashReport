@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CustInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BranchID" />
+          </Key>
+          <Property Name="BranchID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BranchName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SalArea">
+          <Key>
+            <PropertyRef Name="SalAreaID" />
+          </Key>
+          <Property Name="SalAreaID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SalAreaName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblArea">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblAreaToDistrict">
+          <Key>
+            <PropertyRef Name="AutoNo" />
+          </Key>
+          <Property Name="AutoNo" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaID" Type="nvarchar" MaxLength="150" />
+          <Property Name="DistrictID" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblBranchToProvince">
+          <Key>
+            <PropertyRef Name="AutoNo" />
+          </Key>
+          <Property Name="AutoNo" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BranchID" Type="nvarchar" MaxLength="150" />
+          <Property Name="ProvinceID" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblCustomerAM2">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CustName" Type="nvarchar" MaxLength="120" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="DistrictID" Type="nvarchar" MaxLength="150" />
+          <Property Name="AreaID" Type="nvarchar" MaxLength="150" />
+          <Property Name="ProvinceID" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lattitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="Longtitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalAreaName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SlpCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="SlpName" Type="nvarchar" MaxLength="150" />
+          <Property Name="CustImg" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblCustomerWS">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CustName" Type="nvarchar" MaxLength="120" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="District" Type="nvarchar" MaxLength="150" />
+          <Property Name="Area" Type="nvarchar" MaxLength="150" />
+          <Property Name="ProvinceID" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lattitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="Longtitude" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalAreaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SlpCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="SlpName" Type="nvarchar" MaxLength="150" />
+          <Property Name="CustImg" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblDistrict">
+          <Key>
+            <PropertyRef Name="DistrictID" />
+          </Key>
+          <Property Name="DistrictID" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DistrictName" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblProvince">
+          <Key>
+            <PropertyRef Name="ProvinceID" />
+          </Key>
+          <Property Name="ProvinceID" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProvinceName" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblProvinceToArea">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProvinceID" Type="nvarchar" MaxLength="150" />
+          <Property Name="AreaID" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tblSalAreaToProvince">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="BranchID" Type="nvarchar" MaxLength="50" />
+          <Property Name="slpCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalAreaID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProvinceID" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ZoneName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__tblBranch__Provi__6A30C649">
+          <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+          <End Role="tblBranchToProvince" Type="Self.tblBranchToProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="tblBranchToProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__Provi__37A5467C">
+          <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+          <End Role="tblCustomerAM2" Type="Self.tblCustomerAM2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="tblCustomerAM2">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__Provi__5CD6CB2B">
+          <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+          <End Role="tblCustomerWS" Type="Self.tblCustomerWS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="tblCustomerWS">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__ZoneI__693CA210">
+          <End Role="Zone" Type="Self.Zone" Multiplicity="0..1" />
+          <End Role="tblCustomerWS" Type="Self.tblCustomerWS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zone">
+              <PropertyRef Name="ZoneID" />
+            </Principal>
+            <Dependent Role="tblCustomerWS">
+              <PropertyRef Name="ZoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblSalAre__Branc__5FB337D6">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+          <End Role="tblSalAreaToProvince" Type="Self.tblSalAreaToProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchID" />
+            </Principal>
+            <Dependent Role="tblSalAreaToProvince">
+              <PropertyRef Name="BranchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblSalAre__Provi__5DCAEF64">
+          <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+          <End Role="tblSalAreaToProvince" Type="Self.tblSalAreaToProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="tblSalAreaToProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblSalAre__SalAr__5EBF139D">
+          <End Role="SalArea" Type="Self.SalArea" Multiplicity="0..1" />
+          <End Role="tblSalAreaToProvince" Type="Self.tblSalAreaToProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalArea">
+              <PropertyRef Name="SalAreaID" />
+            </Principal>
+            <Dependent Role="tblSalAreaToProvince">
+              <PropertyRef Name="SalAreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CustInfoModelStoreContainer">
+          <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalArea" EntityType="Self.SalArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblArea" EntityType="Self.tblArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAreaToDistrict" EntityType="Self.tblAreaToDistrict" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBranchToProvince" EntityType="Self.tblBranchToProvince" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCustomerAM2" EntityType="Self.tblCustomerAM2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCustomerWS" EntityType="Self.tblCustomerWS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDistrict" EntityType="Self.tblDistrict" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProvince" EntityType="Self.tblProvince" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProvinceToArea" EntityType="Self.tblProvinceToArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalAreaToProvince" EntityType="Self.tblSalAreaToProvince" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zone" EntityType="Self.Zone" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblBranch__Provi__6A30C649" Association="Self.FK__tblBranch__Provi__6A30C649">
+            <End Role="tblProvince" EntitySet="tblProvince" />
+            <End Role="tblBranchToProvince" EntitySet="tblBranchToProvince" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__Provi__37A5467C" Association="Self.FK__tblCustom__Provi__37A5467C">
+            <End Role="tblProvince" EntitySet="tblProvince" />
+            <End Role="tblCustomerAM2" EntitySet="tblCustomerAM2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__Provi__5CD6CB2B" Association="Self.FK__tblCustom__Provi__5CD6CB2B">
+            <End Role="tblProvince" EntitySet="tblProvince" />
+            <End Role="tblCustomerWS" EntitySet="tblCustomerWS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__ZoneI__693CA210" Association="Self.FK__tblCustom__ZoneI__693CA210">
+            <End Role="Zone" EntitySet="Zone" />
+            <End Role="tblCustomerWS" EntitySet="tblCustomerWS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblSalAre__Branc__5FB337D6" Association="Self.FK__tblSalAre__Branc__5FB337D6">
+            <End Role="Branch" EntitySet="Branch" />
+            <End Role="tblSalAreaToProvince" EntitySet="tblSalAreaToProvince" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblSalAre__Provi__5DCAEF64" Association="Self.FK__tblSalAre__Provi__5DCAEF64">
+            <End Role="tblProvince" EntitySet="tblProvince" />
+            <End Role="tblSalAreaToProvince" EntitySet="tblSalAreaToProvince" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblSalAre__SalAr__5EBF139D" Association="Self.FK__tblSalAre__SalAr__5EBF139D">
+            <End Role="SalArea" EntitySet="SalArea" />
+            <End Role="tblSalAreaToProvince" EntitySet="tblSalAreaToProvince" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CustInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="BranchID" />
+          </Key>
+          <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BranchName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblSalAreaToProvinces" Relationship="Self.FK__tblSalAre__Branc__5FB337D6" FromRole="Branch" ToRole="tblSalAreaToProvince" />
+        </EntityType>
+        <EntityType Name="SalArea">
+          <Key>
+            <PropertyRef Name="SalAreaID" />
+          </Key>
+          <Property Name="SalAreaID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SalAreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblSalAreaToProvinces" Relationship="Self.FK__tblSalAre__SalAr__5EBF139D" FromRole="SalArea" ToRole="tblSalAreaToProvince" />
+        </EntityType>
+        <EntityType Name="tblAreaToDistrict">
+          <Key>
+            <PropertyRef Name="AutoNo" />
+          </Key>
+          <Property Name="AutoNo" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DistrictID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblBranchToProvince">
+          <Key>
+            <PropertyRef Name="AutoNo" />
+          </Key>
+          <Property Name="AutoNo" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BranchID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinceID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblProvince" Relationship="CustInfoModel.FK__tblBranch__Provi__6A30C649" FromRole="tblBranchToProvince" ToRole="tblProvince" />
+        </EntityType>
+        <EntityType Name="tblCustomerAM2">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DistrictID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AreaID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinceID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lattitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Longtitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalAreaName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SlpCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SlpName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CustImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblProvince" Relationship="Self.FK__tblCustom__Provi__37A5467C" FromRole="tblCustomerAM2" ToRole="tblProvince" />
+        </EntityType>
+        <EntityType Name="tblCustomerW">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinceID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lattitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Longtitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZoneID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalAreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SlpCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="SlpName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CustImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblProvince" Relationship="Self.FK__tblCustom__Provi__5CD6CB2B" FromRole="tblCustomerWS" ToRole="tblProvince" />
+          <NavigationProperty Name="Zone" Relationship="CustInfoModel.FK__tblCustom__ZoneI__693CA210" FromRole="tblCustomerW" ToRole="Zone" />
+        </EntityType>
+        <EntityType Name="tblProvince">
+          <Key>
+            <PropertyRef Name="ProvinceID" />
+          </Key>
+          <Property Name="ProvinceID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProvinceName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblCustomerAM2" Relationship="Self.FK__tblCustom__Provi__37A5467C" FromRole="tblProvince" ToRole="tblCustomerAM2" />
+          <NavigationProperty Name="tblCustomerWS" Relationship="Self.FK__tblCustom__Provi__5CD6CB2B" FromRole="tblProvince" ToRole="tblCustomerWS" />
+          <NavigationProperty Name="tblSalAreaToProvinces" Relationship="Self.FK__tblSalAre__Provi__5DCAEF64" FromRole="tblProvince" ToRole="tblSalAreaToProvince" />
+          <NavigationProperty Name="tblBranchToProvinces" Relationship="CustInfoModel.FK__tblBranch__Provi__6A30C649" FromRole="tblProvince" ToRole="tblBranchToProvince" />
+        </EntityType>
+        <EntityType Name="tblProvinceToArea">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProvinceID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AreaID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblSalAreaToProvince">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="BranchID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="slpCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalAreaID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinceID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Branch" Relationship="Self.FK__tblSalAre__Branc__5FB337D6" FromRole="tblSalAreaToProvince" ToRole="Branch" />
+          <NavigationProperty Name="SalArea" Relationship="Self.FK__tblSalAre__SalAr__5EBF139D" FromRole="tblSalAreaToProvince" ToRole="SalArea" />
+          <NavigationProperty Name="tblProvince" Relationship="Self.FK__tblSalAre__Provi__5DCAEF64" FromRole="tblSalAreaToProvince" ToRole="tblProvince" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ZoneName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblCustomerWS" Relationship="CustInfoModel.FK__tblCustom__ZoneI__693CA210" FromRole="Zone" ToRole="tblCustomerW" />
+        </EntityType>
+        <Association Name="FK__tblSalAre__Branc__5FB337D6">
+          <End Role="Branch" Type="Self.Branch" Multiplicity="0..1" />
+          <End Role="tblSalAreaToProvince" Type="Self.tblSalAreaToProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Branch">
+              <PropertyRef Name="BranchID" />
+            </Principal>
+            <Dependent Role="tblSalAreaToProvince">
+              <PropertyRef Name="BranchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblSalAre__SalAr__5EBF139D">
+          <End Role="SalArea" Type="Self.SalArea" Multiplicity="0..1" />
+          <End Role="tblSalAreaToProvince" Type="Self.tblSalAreaToProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalArea">
+              <PropertyRef Name="SalAreaID" />
+            </Principal>
+            <Dependent Role="tblSalAreaToProvince">
+              <PropertyRef Name="SalAreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__Provi__37A5467C">
+          <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+          <End Role="tblCustomerAM2" Type="Self.tblCustomerAM2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="tblCustomerAM2">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCustom__Provi__5CD6CB2B">
+          <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+          <End Role="tblCustomerWS" Type="Self.tblCustomerW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="tblCustomerWS">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblSalAre__Provi__5DCAEF64">
+          <End Role="tblProvince" Type="Self.tblProvince" Multiplicity="0..1" />
+          <End Role="tblSalAreaToProvince" Type="Self.tblSalAreaToProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="tblSalAreaToProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CustInfoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Branches" EntityType="Self.Branch" />
+          <EntitySet Name="SalAreas" EntityType="Self.SalArea" />
+          <EntitySet Name="tblAreaToDistricts" EntityType="Self.tblAreaToDistrict" />
+          <EntitySet Name="tblBranchToProvinces" EntityType="Self.tblBranchToProvince" />
+          <EntitySet Name="tblCustomerAM2" EntityType="Self.tblCustomerAM2" />
+          <EntitySet Name="tblCustomerWS" EntityType="Self.tblCustomerW" />
+          <EntitySet Name="tblProvinces" EntityType="Self.tblProvince" />
+          <EntitySet Name="tblProvinceToAreas" EntityType="Self.tblProvinceToArea" />
+          <EntitySet Name="tblSalAreaToProvinces" EntityType="Self.tblSalAreaToProvince" />
+          <EntitySet Name="Zones" EntityType="Self.Zone" />
+          <AssociationSet Name="FK__tblSalAre__Branc__5FB337D6" Association="Self.FK__tblSalAre__Branc__5FB337D6">
+            <End Role="Branch" EntitySet="Branches" />
+            <End Role="tblSalAreaToProvince" EntitySet="tblSalAreaToProvinces" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblSalAre__SalAr__5EBF139D" Association="Self.FK__tblSalAre__SalAr__5EBF139D">
+            <End Role="SalArea" EntitySet="SalAreas" />
+            <End Role="tblSalAreaToProvince" EntitySet="tblSalAreaToProvinces" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__Provi__37A5467C" Association="Self.FK__tblCustom__Provi__37A5467C">
+            <End Role="tblProvince" EntitySet="tblProvinces" />
+            <End Role="tblCustomerAM2" EntitySet="tblCustomerAM2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__Provi__5CD6CB2B" Association="Self.FK__tblCustom__Provi__5CD6CB2B">
+            <End Role="tblProvince" EntitySet="tblProvinces" />
+            <End Role="tblCustomerWS" EntitySet="tblCustomerWS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblSalAre__Provi__5DCAEF64" Association="Self.FK__tblSalAre__Provi__5DCAEF64">
+            <End Role="tblProvince" EntitySet="tblProvinces" />
+            <End Role="tblSalAreaToProvince" EntitySet="tblSalAreaToProvinces" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCustom__ZoneI__693CA210" Association="CustInfoModel.FK__tblCustom__ZoneI__693CA210">
+            <End Role="Zone" EntitySet="Zones" />
+            <End Role="tblCustomerW" EntitySet="tblCustomerWS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblBranch__Provi__6A30C649" Association="CustInfoModel.FK__tblBranch__Provi__6A30C649">
+            <End Role="tblProvince" EntitySet="tblProvinces" />
+            <End Role="tblBranchToProvince" EntitySet="tblBranchToProvinces" />
+          </AssociationSet>
+          <EntitySet Name="tblAreas" EntityType="CustInfoModel.tblArea" />
+          <EntitySet Name="tblDistricts" EntityType="CustInfoModel.tblDistrict" />
+        </EntityContainer>
+        <Association Name="FK__tblCustom__ZoneI__693CA210">
+          <End Type="CustInfoModel.Zone" Role="Zone" Multiplicity="0..1" />
+          <End Type="CustInfoModel.tblCustomerW" Role="tblCustomerW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zone">
+              <PropertyRef Name="ZoneID" />
+            </Principal>
+            <Dependent Role="tblCustomerW">
+              <PropertyRef Name="ZoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblBranch__Provi__6A30C649">
+          <End Type="CustInfoModel.tblProvince" Role="tblProvince" Multiplicity="0..1" />
+          <End Type="CustInfoModel.tblBranchToProvince" Role="tblBranchToProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Principal>
+            <Dependent Role="tblBranchToProvince">
+              <PropertyRef Name="ProvinceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblArea">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AreaName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblDistrict">
+          <Key>
+            <PropertyRef Name="DistrictID" />
+          </Key>
+          <Property Name="DistrictID" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DistrictName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CustInfoModelStoreContainer" CdmEntityContainer="CustInfoEntities">
+          <EntitySetMapping Name="Branches">
+            <EntityTypeMapping TypeName="CustInfoModel.Branch">
+              <MappingFragment StoreEntitySet="Branch">
+                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalAreas">
+            <EntityTypeMapping TypeName="CustInfoModel.SalArea">
+              <MappingFragment StoreEntitySet="SalArea">
+                <ScalarProperty Name="SalAreaID" ColumnName="SalAreaID" />
+                <ScalarProperty Name="SalAreaName" ColumnName="SalAreaName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAreaToDistricts">
+            <EntityTypeMapping TypeName="CustInfoModel.tblAreaToDistrict">
+              <MappingFragment StoreEntitySet="tblAreaToDistrict">
+                <ScalarProperty Name="AutoNo" ColumnName="AutoNo" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBranchToProvinces">
+            <EntityTypeMapping TypeName="CustInfoModel.tblBranchToProvince">
+              <MappingFragment StoreEntitySet="tblBranchToProvince">
+                <ScalarProperty Name="AutoNo" ColumnName="AutoNo" />
+                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCustomerAM2">
+            <EntityTypeMapping TypeName="CustInfoModel.tblCustomerAM2">
+              <MappingFragment StoreEntitySet="tblCustomerAM2">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustName" ColumnName="CustName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="Lattitude" ColumnName="Lattitude" />
+                <ScalarProperty Name="Longtitude" ColumnName="Longtitude" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="SalAreaName" ColumnName="SalAreaName" />
+                <ScalarProperty Name="SlpCode" ColumnName="SlpCode" />
+                <ScalarProperty Name="SlpName" ColumnName="SlpName" />
+                <ScalarProperty Name="CustImg" ColumnName="CustImg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCustomerWS">
+            <EntityTypeMapping TypeName="CustInfoModel.tblCustomerW">
+              <MappingFragment StoreEntitySet="tblCustomerWS">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustName" ColumnName="CustName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="Lattitude" ColumnName="Lattitude" />
+                <ScalarProperty Name="Longtitude" ColumnName="Longtitude" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="SalAreaName" ColumnName="SalAreaName" />
+                <ScalarProperty Name="SlpCode" ColumnName="SlpCode" />
+                <ScalarProperty Name="SlpName" ColumnName="SlpName" />
+                <ScalarProperty Name="CustImg" ColumnName="CustImg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProvinces">
+            <EntityTypeMapping TypeName="CustInfoModel.tblProvince">
+              <MappingFragment StoreEntitySet="tblProvince">
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProvinceToAreas">
+            <EntityTypeMapping TypeName="CustInfoModel.tblProvinceToArea">
+              <MappingFragment StoreEntitySet="tblProvinceToArea">
+                <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalAreaToProvinces">
+            <EntityTypeMapping TypeName="CustInfoModel.tblSalAreaToProvince">
+              <MappingFragment StoreEntitySet="tblSalAreaToProvince">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+                <ScalarProperty Name="slpCode" ColumnName="slpCode" />
+                <ScalarProperty Name="SalAreaID" ColumnName="SalAreaID" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zones">
+            <EntityTypeMapping TypeName="CustInfoModel.Zone">
+              <MappingFragment StoreEntitySet="Zone">
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAreas">
+            <EntityTypeMapping TypeName="CustInfoModel.tblArea">
+              <MappingFragment StoreEntitySet="tblArea">
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDistricts">
+            <EntityTypeMapping TypeName="CustInfoModel.tblDistrict">
+              <MappingFragment StoreEntitySet="tblDistrict">
+                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+                <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

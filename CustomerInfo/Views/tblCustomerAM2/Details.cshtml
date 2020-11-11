@@ -1,0 +1,61 @@
+﻿@model CustomerInfo.Models.tblCustomerAM2
+
+@{
+    ViewBag.Title = "รายละเอียดร้านค้า" + " " + @Html.DisplayFor(model => model.CustName);
+}
+
+<h2>
+    <b>
+                    
+            @Html.DisplayFor(model => model.CustomerID)
+            @Html.DisplayFor(model => model.CustName)
+
+        
+    </b>
+</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <h2>
+        <dd>
+            <img src="@Url.Content(Model.CustImg)" style="width:500px;height:400px" class="center-block">
+        </dd>
+        <br />
+
+        <dt>
+            ที่อยู่ :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+           พิกัดที่อยู่ :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lattitude)
+            @Html.DisplayFor(model => model.Longtitude)
+            <p><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query= @Html.DisplayFor(model => model.Lattitude), @Html.DisplayFor(model => model.Longtitude)">GoogleMap</a>
+        </dd>
+
+        <dt>
+           เขตจัดจำหน่าย :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalAreaName)
+        </dd>
+        <dt>
+            รหัสพนักงาน :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlpCode)
+            @Html.DisplayFor(model => model.SlpName)
+        </dd>
+            </h2>
+    </dl>
+</div>
+

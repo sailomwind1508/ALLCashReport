@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="CSS/font-awesome.min.css" rel="stylesheet" />
+    <link href="CSS/responsive-menu.css" rel="stylesheet" />
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    <style type="text/css">
+        .header {
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            font-size: x-large;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .line1_left {
+            position: absolute;
+            top: 150px;
+            left: 10%;
+            width: 35%;
+            height: 30px;
+            text-align: right;
+        }
+
+        .line1_center {
+            position: absolute;
+            top: 150px;
+            left: 45%;
+            width: 20%;
+            height: 30px;
+            text-align: center;
+        }
+
+        .line1_right {
+            position: absolute;
+            top: 150px;
+            left: 65%;
+            width: 45%;
+            height: 30px;
+            text-align: left;
+        }
+
+        .line3_btn {
+            position: absolute;
+            top: 210px;
+            left: 0px;
+            width: 100%;
+            height: 30px;
+            text-align: center;
+        }
+
+        .line4_footer-b {
+            position: absolute;
+            top: 200px;
+            left: 5%;
+            width: 7%;
+            height: 600px;
+            text-align: center;
+        }
+
+        .line4_footer {
+            position: absolute;
+            top: 200px;
+            left: 12%;
+            width: 70%;
+            height: 600px;
+            text-align: center;
+        }
+
+        .line4_footer-a {
+            position: absolute;
+            top: 200px;
+            left: 82%;
+            width: 10%;
+            height: 600px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 500px) { /* when the width is less than 30em, make both of the widths 100% */
+            .line1_left {
+                position: absolute;
+                top: 150px;
+                left: 15%;
+                width: 100%;
+                height: 30px;
+                text-align: left;
+            }
+
+            .line1_center {
+                position: absolute;
+                top: 180px;
+                left: 15%;
+                width: 100%;
+                height: 30px;
+                text-align: left;
+            }
+
+            .line1_right {
+                position: absolute;
+                top: 210px;
+                left: 15%;
+                width: 100%;
+                height: 30px;
+                text-align: left;
+            }
+
+            .line3_btn {
+                position: absolute;
+                top: 330px;
+                left: 0px;
+                width: 100%;
+                height: 30px;
+                text-align: center;
+            }
+
+
+            .line4_footer-b {
+                position: absolute;
+                top: 250px;
+                left: 10%;
+                width: 10%;
+                height: 600px;
+                text-align: center;
+            }
+
+            .line4_footer {
+                position: absolute;
+                top: 250px;
+                left: 20%;
+                width: 70%;
+                height: 600px;
+                text-align: center;
+            }
+
+            .line4_footer-a {
+                position: absolute;
+                top: 250px;
+                left: 90%;
+                width: 10%;
+                height: 600px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home"><img src="United-food2222_1.jpg" /></a>
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <div class="dropdown">
+            <button class="dropbtn">
+                Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    
+    <div class="header">
+        <asp:Label ID="Label2" runat="server" Text="บริษัท ขายสะดวก จำกัด"></asp:Label>
+    </div>
+    <div class="line1_left">
+        <asp:Label ID="Label1" runat="server" Text="เลือกสาขา : "></asp:Label>&nbsp;
+        <asp:DropDownList ID="ddlBranch" runat="server" Height="23px" Width="149px"></asp:DropDownList>
+    </div>
+    <div class="line1_center">
+        <asp:Label ID="Label3" runat="server" Text="กลุ่มสินค้า : "></asp:Label>&nbsp;
+        <asp:DropDownList ID="ddlProductType" runat="server" Height="23px" Width="149px"></asp:DropDownList>
+    </div>
+    <div class="line1_right"><asp:Button ID="btnReport" runat="server" Height="33px" OnClick="btnReport_Click" Style="font-weight: 700" Text="แสดงรายงาน" Width="96px" ValidationGroup="Report" Class="button" /></div>
+    <div class="line4_footer-b"></div>
+    <div class="line4_footer">
+        <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" ToolPanelView="None" HasRefreshButton="True" OnLoad="CrystalReportViewer1_Load" HasToggleGroupTreeButton="False" HasPageNavigationButtons="False" Width="100%" />
+    </div>
+    <div class="line4_footer-a"></div>
+    
+</body>
+</html>

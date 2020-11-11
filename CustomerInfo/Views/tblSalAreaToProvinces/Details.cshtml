@@ -1,0 +1,50 @@
+﻿@model CustomerInfo.Models.tblSalAreaToProvince
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblSalAreaToProvince</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SalAreaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalAreaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.slpCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.slpCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProvinceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProvinceID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BranchID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BranchID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

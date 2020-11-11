@@ -1,0 +1,139 @@
+﻿@model IEnumerable<CustomerInfo.Models.tblCustomerAM2>
+@*@model CustomerInfo.Models.tblCustomerAM2*@
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-group form-group-sm">
+        <div class="col-md-2">
+            ศูนย์จัดจำหน่าย :
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("BranchID", ViewBag.BranchID as SelectList, "Please select", htmlAttributes: new {@class = "form-control" })<br>
+        </div>
+    </div>
+    <div class="form-group form-group-sm">
+        <div class="col-md-2">
+            จังหวัด :
+        </div>
+        <div class="col-md-4">
+            @*@Html.DropDownList("ProvinceID", new SelectList(""), "Please select", htmlAttributes: new {@class = "form-control" })<br>*@
+            <select name="id" id="province" class="form-control" data-url="@Url.Action("GetbranchToProvince","TEST")"></select>
+           
+        </div>
+    </div>
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+  
+        $(function () {
+            $("#BranchID").change(function (e) {
+                $("#province").empty();
+                var $province = $("#province");
+                var url = $province.data("url") + '?BranchID=' + $(this).val();
+                $.getJSON(url, function (branchToProvinces) {
+                    $.each(branchToProvinces, function (a, b) {
+                        debugger
+
+                        $province.append('<option value ="' + b.ProvinceID + '">' + b.Name + '</option>')
+                    });
+                });
+            });
+        });
+    
+</script>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistrictID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lattitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longtitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZoneID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalAreaName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlpCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustImg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblProvince.ProvinceName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistrictID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lattitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longtitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZoneID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalAreaName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlpCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustImg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblProvince.ProvinceName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
+            </td>
+        </tr>
+    }
+
+</table>

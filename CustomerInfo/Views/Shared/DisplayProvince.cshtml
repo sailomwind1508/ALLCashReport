@@ -1,0 +1,11 @@
+﻿@model CustomerInfo.Models.tblBranchToProvince
+
+<option value="">--Select States--</option>
+
+@if(ViewBag.ViewBag.bp != null)
+{
+    foreach(var item in ViewBag.bp)
+    {
+        <option value="@item.ProvinceID">@item.Name</option>
+    }
+}

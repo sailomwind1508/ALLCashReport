@@ -1,0 +1,100 @@
+﻿@model IEnumerable<CustomerInfo.Models.tblCustomerWS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.DropDownList("ZoneTEXT",null,htmlAttributes: new { @class = "form-control"})
+    <input type="submit" value="Search"/> 
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.District)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lattitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longtitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalAreaName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlpCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustImg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zone.ZoneID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.District)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Province)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lattitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longtitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalAreaName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SlpCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SlpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustImg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zone.ZoneID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
+        </td>
+    </tr>
+}
+
+</table>

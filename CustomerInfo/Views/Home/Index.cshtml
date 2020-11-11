@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <div class="col-lg-3">
+
+        <h1 class="my-4">Main</h1>
+       
+
+        <div class="list-group">
+            <p> @Html.ActionLink("ข้อมูลร้าน WS", "Index", "tblCustomerWS", null, new { @class = "list-group-item list-group-item-danger" })</p>
+            <p> @Html.ActionLink("ข้อมูลร้าน AM2", "Index", "tblCustomerAM2", null, new { @class = "list-group-item list-group-item-danger" })</p>
+        </div>
+    </div>
+</div>

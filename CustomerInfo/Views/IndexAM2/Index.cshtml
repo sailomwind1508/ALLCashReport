@@ -1,0 +1,99 @@
+﻿@model IEnumerable<CustomerInfo.Models.IndexAM2ViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div class="container">
+        <div class="form-group form-group-sm">
+            @if (ViewBag.BranchID != null)
+            {
+                <div class="col-md-2">
+                    ศูนย์ :
+                </div>
+                <div class="col-md-4">
+                    @Html.DropDownList("BranchID", ViewBag.BranchID as SelectList, "Please select", htmlAttributes: new { @class = "form-control" })<br>
+
+                </div>
+            }
+
+            <div class="col-md-2">
+                Van :
+            </div>
+            <div class="col-md-4">
+                @Html.DropDownList("slpCode", new SelectList(" "), "Please select", htmlAttributes: new { @class = "form-control" })<br>
+            </div>
+        </div>
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script>
+        $(document).ready(function () {
+            $("#BranchID").change(function () {
+
+                $.get("/tblCustomerAM2/GetVanList"{ BranchID: $("#BranchID").val() }, function (data) {
+                    $.each(data, function (Index, row) {
+
+                        $("#StateID").append("<option value =>'" + row.slpCode + "'>" + row.slpCode+"</option>")
+                    });
+                });
+            })
+        });
+
+
+        </script>
+
+        <div class="col-md-10">
+            <input type="submit" value="Seach" class="btn btn-success" /><br><br>
+        </div>
+    </div>
+
+}
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.tblCustomerAM2.CustImg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblCustomerAM2.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblCustomerAM2.CustName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblCustomerAM2.SlpCode)
+        </th>
+        <th>
+            จังหวัด
+        </th>
+
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src=" @Url.Content(@item.tblCustomerAM2.CustImg)" style="width:120px;height:60px">
+            </td>
+            <td>
+                <h2>@Html.DisplayFor(modelItem => item.tblCustomerAM2.CustomerID)</h2>
+            </td>
+            <td>
+                <h2> @Html.ActionLink(item.tblCustomerAM2.CustName, "Details", new { id = item.tblCustomerAM2.CustomerID })</h2>
+            </td>
+            <td>
+                <h2> @Html.DisplayFor(modelItem => item.tblCustomerAM2.SlpCode) </h2>
+            </td>
+            <td>
+                <h2>@Html.DisplayFor(modelItem => item.tblProvince.ProvinceName)</h2>
+            </td>
+        </tr>
+
+    }
+
+</table>

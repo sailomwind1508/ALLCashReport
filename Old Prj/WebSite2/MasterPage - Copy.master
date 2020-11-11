@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage - Copy.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="CSS/style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="/crystalreportviewers13/js/crviewer/crv.js"></script>
+    <%--<script type="text/javascript" src="/aspnet_client/system_web/4_0_30319/crystalreportviewers13/js/crviewer/crv.js"></script>--%>
+    <style type="text/css">
+        .auto-style2 {
+            left: 0px;
+            top: 0px;
+        }
+        .auto-style5 {
+            left: 0px;
+            top: 0px;
+            width: 52px;
+            height: 48px;
+        }
+    </style>
+
+    <script>
+  //      $(document).ready(function () {
+
+	
+		//	$('#btnLogout').live('click', function (e) {
+
+		//		sessionStorage.clear();
+				
+		//	});
+		//});
+        
+    </script>
+
+    <link href="CSS/SmoothCSS.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off"> 
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+        <div class="">
+
+            <ul id="nav">
+                <li class="currentLogo auto-style5">
+                    <%--<a href="https://www.unitedfoods.co.th" class="auto-style4"></a>--%>
+                    <img src="United-food2222_1.jpg" />
+                </li>
+                <%--<li class="current"><a href="Index.aspx">Home</a></li>--%>
+                <li><a href="Index.aspx">Home</a></li>
+                <li><a href="#">All Cash Report</a>
+                    <ul>
+                        <li><a href="AllCashReport_V2.aspx">New Report</a></li>
+                        <li><a href="AllCashReport.aspx">Old Report</a>
+                            <%--<ul>
+                                <li><a href="#">Empty</a></li>
+                                <li><a href="#">Empty</a></li>
+                            </ul>--%>
+                        </li>
+                       <%-- <li><a href="#">Empty</a></li>
+                        <li><a href="#">Empty</a></li>
+                        <li><a href="#">Empty</a></li>
+                        <li><a href="#">Empty</a></li>--%>
+                    </ul>
+                </li>
+                <li><a href="#">Forecast Reports</a>
+                    <ul>
+                        <li><a href="ForecashReportTK.aspx">Forecast Report</a>
+                            <%--<ul>
+                                <li><a href="#">Empty</a></li>
+                                <li><a href="#">Empty</a></li>
+                                <li><a href="#">Empty</a></li>
+                                <li><a href="#">Empty</a></li>
+                            </ul>--%>
+                        </li>
+                       <%-- <li><a href="#">Forecast Report บางพลี</a>--%>
+                            <%--<ul>
+                                <li><a href="#">Empty</a></li>
+                                <li><a href="#">Empty</a></li>
+                                <li><a href="#">Empty</a></li>
+                            </ul>--%>
+                       <%-- </li>--%>
+                    </ul>
+                </li>
+                <li><a href="Index.aspx?ClearSessionFlag=1" id="btnLogout">Logout</a></li>
+                <li><a href="#">Empty</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="content_resize">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div style="text-align: center;" class="auto-style2">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
+</body>
+
+
+</html>

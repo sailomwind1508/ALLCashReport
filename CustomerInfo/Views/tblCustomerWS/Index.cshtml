@@ -1,0 +1,83 @@
+﻿@*@model IEnumerable<CustomerInfo.Models.tblCustomerW>*@
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<CustomerInfo.Models.tblCustomerW>
+@{
+    ViewBag.Title = "ListWS";
+}
+
+<h2>ร้านค้า WS</h2><br>
+
+
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-group form-group-sm">
+        <div class="col-md-2">
+            เขต :
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("ZoneID", (SelectList)ViewBag.MyList, "Please select", htmlAttributes: new { @class = "form-control" })<br>
+        </div>
+    </div>
+    <div class="form-group form-group-sm">
+        <div class="col-md-2">
+            จังหวัด :
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("ProvinceID", (SelectList)ViewBag.MyList, "Please select", htmlAttributes: new { @class = "form-control" })<br>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <input type="submit" value="Seach" class="btn btn-success" /><br><br>
+    </div>
+
+}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                <b>
+                    รูปภาพ
+                </b>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CustName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Zone.ZoneName)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    <img src=" @Url.Content(@item.CustImg)" style="width:120px;height:60px">
+                </td>
+                <td>
+                    <h2>@Html.DisplayFor(modelItem => item.CustomerID)</h2>
+                </td>
+                <td>
+                    <h2> @Html.ActionLink(item.CustName, "Details", new { id = item.CustomerID })</h2>
+                </td>
+                <td>
+                    <h2> @Html.DisplayFor(modelItem => item.Zone.ZoneName)</h2>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+<br />
+@Html.PagedListPager(Model,page => Url.Action("Index",new { page}))

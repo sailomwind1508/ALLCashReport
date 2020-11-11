@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Targets>
+  <Target Name="C:\Users\sailom.k\AppData\Local\Temp\tmp2413.tmp.cadir\bin\App_Web_jvedcask.dll">
+   <Modules>
+    <Module Name="app_web_jvedcask.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="ActualSalesForMDManagerReport" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ActualSalesForMDManagerReport.aspx.cs" Line="137">Object 'cn' can be disposed more than once in method 'ActualSalesForMDManagerReport.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 137</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ActualSalesForMDManagerReport.aspx.cs" Line="141">'ActualSalesForMDManagerReport.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ChequeStatus" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BindGridView()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="154">'ChequeStatus.BindGridView()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetDataFromDB(System.Boolean)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="334">Object 'cn' can be disposed more than once in method 'ChequeStatus.GetDataFromDB(bool)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 334</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="358">'ChequeStatus.GetDataFromDB(bool)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#grdChequeStatus_RowDataBound(System.Object,System.Web.UI.WebControls.GridViewRowEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="712">'ChequeStatus.grdChequeStatus_RowDataBound(object, GridViewRowEventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitialSAPData()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="397">Object 'cn' can be disposed more than once in method 'ChequeStatus.InitialSAPData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 397</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="399">'ChequeStatus.InitialSAPData()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitPage()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="93">Object 'cn' can be disposed more than once in method 'ChequeStatus.InitPage()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 93</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveData()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="626">Object 'dataConnection' can be disposed more than once in method 'ChequeStatus.SaveData()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 626</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="631">'ChequeStatus.SaveData()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ChequeStatus.aspx.cs" Line="620">The query string passed to 'SqlCommand.CommandText.set(string)' in 'ChequeStatus.SaveData()' could contain the following variables 'row.FindControl("lblDocNo") as Label.Text', 'row.FindControl("lblCompany") as Label.Text', '_txtChequeNo.Text', '_statementDate[2]', '_statementDate[1]', '_statementDate[0]', '_receiveDate[2]', '_receiveDate[1]', '_receiveDate[0]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ForecashReportTK" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ForecashReportTK.aspx.cs" Line="148">Object 'cn' can be disposed more than once in method 'ForecashReportTK.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 148</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ForecashReportTK.aspx.cs" Line="151">'ForecashReportTK.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ForecashReportTK.aspx.cs" Line="74">Object 'cn' can be disposed more than once in method 'ForecashReportTK.Page_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 74</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ForecashReportTK.aspx.cs" Line="80">'ForecashReportTK.Page_Load(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MonthlySalesSumReport" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#RenderReport(System.Data.DataSet,Report_ClassLibrary.ReportFilter)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="MonthlySalesSumReport.aspx.cs" Line="78">'MonthlySalesSumReport.RenderReport(DataSet, ReportFilter)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SaleSumMapDT" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BindGridView()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleSumMapDT.aspx.cs" Line="276">Object 'cn' can be disposed more than once in method 'SaleSumMapDT.BindGridView()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 276</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleSumMapDT.aspx.cs" Line="278">'SaleSumMapDT.BindGridView()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitPage()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleSumMapDT.aspx.cs" Line="96">Object 'cn' can be disposed more than once in method 'SaleSumMapDT.InitPage()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 96, 115, 116</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleSumMapDT.aspx.cs" Line="159">'SaleSumMapDT.InitPage()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SaleTargetReport" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddExcelToDB(System.Data.OleDb.OleDbConnection,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="721">'SaleTargetReport.AddExcelToDB(OleDbConnection, string, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="706">The query string passed to 'OleDbCommand.OleDbCommand(string, OleDbConnection)' in 'SaleTargetReport.AddExcelToDB(OleDbConnection, string, string)' could contain the following variables 'sheetName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BindEditGridView()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="265">'SaleTargetReport.BindEditGridView()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BindGridView()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="237">'SaleTargetReport.BindGridView()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#btnUpload_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="679">'SaleTargetReport.btnUpload_Click(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#initPage()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="209">'SaleTargetReport.initPage()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveTarget()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="142">Object 'cn' can be disposed more than once in method 'SaleTargetReport.SaveTarget()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 142</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="148">'SaleTargetReport.SaveTarget()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SearchEdit()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="458">Object 'cn' can be disposed more than once in method 'SaleTargetReport.SearchEdit()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 458</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="462">'SaleTargetReport.SearchEdit()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#searchReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="326">Object 'cn' can be disposed more than once in method 'SaleTargetReport.searchReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 326</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="331">'SaleTargetReport.searchReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TestReadExcel()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SaleTargetReport.aspx.cs" Line="605">'SaleTargetReport.TestReadExcel()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransferStockByVAN" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockByVAN.aspx.cs" Line="156">Object 'cn' can be disposed more than once in method 'TransferStockByVAN.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 156, 157</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockByVAN.aspx.cs" Line="161">'TransferStockByVAN.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockByVAN.aspx.cs" Line="57">Object 'cn' can be disposed more than once in method 'TransferStockByVAN.Page_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 57</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockByVAN.aspx.cs" Line="65">'TransferStockByVAN.Page_Load(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="XenaSAPComparison" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="XenaSAPComparison.aspx.cs" Line="148">Object 'cn' can be disposed more than once in method 'XenaSAPComparison.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 148</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="XenaSAPComparison.aspx.cs" Line="151">'XenaSAPComparison.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitPage()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="XenaSAPComparison.aspx.cs" Line="74">Object 'cn' can be disposed more than once in method 'XenaSAPComparison.InitPage()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 74</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\sailom.k\AppData\Local\Temp\tmp2413.tmp.cadir\bin\App_Web_tmioop3f.dll">
+   <Modules>
+    <Module Name="app_web_tmioop3f.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="AccountManagement" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BindDDLUser()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="190">Object 'cn' can be disposed more than once in method 'AccountManagement.BindDDLUser()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 190</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="192">'AccountManagement.BindDDLUser()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#BindGridView()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="246">Object 'cn' can be disposed more than once in method 'AccountManagement.BindGridView()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 246</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="248">'AccountManagement.BindGridView()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteUser(System.Int32)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="487">Object 'cn' can be disposed more than once in method 'AccountManagement.DeleteUser(int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 487</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="494">'AccountManagement.DeleteUser(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#grdAccMng_RowCommand(System.Object,System.Web.UI.WebControls.GridViewCommandEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="276">'AccountManagement.grdAccMng_RowCommand(object, GridViewCommandEventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#grdAccMng_RowDataBound(System.Object,System.Web.UI.WebControls.GridViewRowEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="403">'AccountManagement.grdAccMng_RowDataBound(object, GridViewRowEventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#grdUser_RowDataBound(System.Object,System.Web.UI.WebControls.GridViewRowEventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="633">'AccountManagement.grdUser_RowDataBound(object, GridViewRowEventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#linkAddUser_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="438">'AccountManagement.linkAddUser_Click(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#linkExportReport_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="363">Object 'cn' can be disposed more than once in method 'AccountManagement.linkExportReport_Click(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 363</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="365">'AccountManagement.linkExportReport_Click(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RemoveData(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="308">Object 'cn' can be disposed more than once in method 'AccountManagement.RemoveData(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 308</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="316">'AccountManagement.RemoveData(string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SavePermission()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="543">Object 'cn' can be disposed more than once in method 'AccountManagement.SavePermission()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 543</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="549">'AccountManagement.SavePermission()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SaveUser()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="596">Object 'cn' can be disposed more than once in method 'AccountManagement.SaveUser()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 596</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AccountManagement.aspx.cs" Line="603">'AccountManagement.SaveUser()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ActualSalesQtyByChannel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ActualSalesQtyByChannel.aspx.cs" Line="136">Object 'cn' can be disposed more than once in method 'ActualSalesQtyByChannel.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 136</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ActualSalesQtyByChannel.aspx.cs" Line="140">'ActualSalesQtyByChannel.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ActualSalesQtyByChannel.aspx.cs" Line="57">Object 'cn' can be disposed more than once in method 'ActualSalesQtyByChannel.Page_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 57</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="ActualSalesQtyByChannel.aspx.cs" Line="65">'ActualSalesQtyByChannel.Page_Load(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="AllCashReport_V2" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AllCashReport_V2.aspx.cs" Line="216">Object 'cn' can be disposed more than once in method 'AllCashReport_V2.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 216</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AllCashReport_V2.aspx.cs" Line="219">'AllCashReport_V2.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="AllCashReport_V2.aspx.cs" Line="78">Object 'cn' can be disposed more than once in method 'AllCashReport_V2.Page_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 78, 79</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RefreshTransferStockReport" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="RefreshTransferStockReport.aspx.cs" Line="140">Object 'cn' can be disposed more than once in method 'RefreshTransferStockReport.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 140</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="RefreshTransferStockReport.aspx.cs" Line="144">'RefreshTransferStockReport.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#linkRefreshTransferStock_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="RefreshTransferStockReport.aspx.cs" Line="70">Object 'cn' can be disposed more than once in method 'RefreshTransferStockReport.linkRefreshTransferStock_Click(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 70</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="RefreshTransferStockReport.aspx.cs" Line="72">'RefreshTransferStockReport.linkRefreshTransferStock_Click(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SalesPeriodReport" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BindGridView()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SalesPeriodReport.aspx.cs" Line="95">'SalesPeriodReport.BindGridView()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SalesPeriodReport.aspx.cs" Line="69">Object 'cn' can be disposed more than once in method 'SalesPeriodReport.Page_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 69</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="SalesPeriodReport.aspx.cs" Line="71">'SalesPeriodReport.Page_Load(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransferStockBySKU" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockBySKU.aspx.cs" Line="233">Object 'cn' can be disposed more than once in method 'TransferStockBySKU.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 233, 234</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockBySKU.aspx.cs" Line="238">'TransferStockBySKU.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#InitPage()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockBySKU.aspx.cs" Line="85">Object 'cn' can be disposed more than once in method 'TransferStockBySKU.InitPage()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 85, 98, 99</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockBySKU.aspx.cs" Line="133">'TransferStockBySKU.InitPage()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransferStockDaily" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockDaily.aspx.cs" Line="157">Object 'cn' can be disposed more than once in method 'TransferStockDaily.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 157</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockDaily.aspx.cs" Line="161">'TransferStockDaily.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockDaily.aspx.cs" Line="57">Object 'cn' can be disposed more than once in method 'TransferStockDaily.Page_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 57</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="TransferStockDaily.aspx.cs" Line="65">'TransferStockDaily.Page_Load(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="XenaSapDiscountComparison" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GenReport()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="XenaSapDiscountComparison.aspx.cs" Line="137">Object 'cn' can be disposed more than once in method 'XenaSapDiscountComparison.GenReport()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 137</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="XenaSapDiscountComparison.aspx.cs" Line="141">'XenaSapDiscountComparison.GenReport()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="XenaSapDiscountComparison.aspx.cs" Line="57">Object 'cn' can be disposed more than once in method 'XenaSapDiscountComparison.Page_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 57</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\sailom.k\AppData\Local\Temp\tmp2413.tmp.cadir\bin\App_Web_vpv5fehi.dll">
+   <Modules>
+    <Module Name="app_web_vpv5fehi.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="index" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#login()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="index.aspx.cs" Line="114">Object 'cn' can be disposed more than once in method 'index.login()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 114, 115</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MasterPage" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="MasterPage.master.cs" Line="46">'MasterPage.Page_Load(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="test4" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BindGridView()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="test4.aspx.cs" Line="81">'test4.BindGridView()' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Page_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="test4.aspx.cs" Line="54">Object 'cn' can be disposed more than once in method 'test4.Page_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 54</Issue>
+            </Message>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-12-12 02:07:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\United Food\All Cash Report\ALLCashReport\Boostrap_WebSite" File="test4.aspx.cs" Line="56">'test4.Page_Load(object, EventArgs)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 137</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

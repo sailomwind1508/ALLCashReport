@@ -1,0 +1,38 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title> "First Page" </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+
+
+        var _location = document.getElementById("location");
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            _location = document.getElementById("location");
+
+            _location.innerHTML = "Geolocation is not supported by this browser.";
+        }
+
+
+        function showPosition(position) {
+            _location = document.getElementById("location");
+
+            //var text = '{"Latitude":"' + position.coords.latitude + '", Longitude:"' + position.coords.longitude + '" }';
+            var obj = { Latitude: position.coords.latitude, Longitude: position.coords.longitude };
+            var myJSON = JSON.stringify(obj);
+
+            window.top.postMessage(myJSON, '*')
+        }
+
+    </script>
+</body>
+
+</html> 

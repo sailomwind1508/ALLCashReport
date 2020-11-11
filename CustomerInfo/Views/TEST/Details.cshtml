@@ -1,0 +1,114 @@
+﻿@model CustomerInfo.Models.tblCustomerAM2
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblCustomerAM2</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistrictID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistrictID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lattitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lattitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longtitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longtitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZoneID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZoneID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalAreaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalAreaName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SlpCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlpCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SlpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SlpName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustImg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblProvince.ProvinceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblProvince.ProvinceName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

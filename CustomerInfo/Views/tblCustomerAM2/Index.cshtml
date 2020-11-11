@@ -1,0 +1,182 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<CustomerInfo.Models.tblCustomerAM2>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>AM2</h2>
+@using (Html.BeginForm())
+{
+
+    <div class="form-group form-group-sm">
+        <div class="col-md-2">
+            ศูนย์จัดจำหน่าย :
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("BranchID", (SelectList)ViewBag.BranchID, "Please select", htmlAttributes: new { @class = "form-control" })<br>
+        </div>
+    </div>
+    <div class="form-group form-group-sm">
+        <div class="col-md-2">
+            จังหวัด :
+        </div>
+        <div class="col-md-4">
+            <select name="ProvinceID" id="province" class="form-control" data-url="@Url.Action("GetbranchToProvince","tblCustomerAM2")"></select>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class="form-group form-group-sm">
+        <div class="col-md-2">
+            อำเภอ :
+        </div>
+        <div class="col-md-4">
+            <select name="AreaID" id="area" class="form-control" data-url="@Url.Action("GetprovinceToArea","tblCustomerAM2")"></select><br>
+        </div>
+    </div>
+    <div class="form-group form-group-sm">
+        <div class="col-md-2">
+            ตำบล :
+        </div>
+        <div class="col-md-4">
+            <select name="DistrictID" id="district" class="form-control" data-url="@Url.Action("GetareaTodistrict","tblCustomerAM2")"></select><br>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <input type="submit" value="Seach" class="btn btn-success" /><br><br>
+    </div>
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+
+    $(function () {
+
+        $("#BranchID").change(function (e) {
+            $("#province").empty();
+            var $province = $("#province");
+            var url = $province.data("url") + '?BranchID=' + $(this).val();
+            $.getJSON(url, function (branchToProvinces) {
+                $province.append('<option value = " "> Please select </option>')
+                $.each(branchToProvinces, function (a, b) {
+                    $province.append('<option value ="' + b.ProvinceID + '">' + b.Name + '</option>')
+                });
+            });
+            $("#area").empty();
+            $("#district").empty();
+        });
+        $("#province").change(function (h) {
+            $("#area").empty();
+            var $area = $("#area");
+            var url = $area.data("url") + '?ProvinceID=' + $(this).val();
+            $.getJSON(url, function (provinceToArea) {
+                $area.append('<option value = " "> Please select </option>')
+                $.each(provinceToArea, function (a, b) {
+                    $area.append('<option value ="' + b.AreaID + '">' + b.Name + '</option>')
+                });
+            });
+
+        });
+        $("#area").change(function (h) {
+            $("#district").empty();
+            var $district = $("#district");
+            var url = $district.data("url") + '?AreaID=' + $(this).val();
+            $.getJSON(url, function (areaTodistrict) {
+                $district.append('<option value = " "> Please select </option>')
+                $.each(areaTodistrict, function (a, b) {
+                    $district.append('<option value ="' + b.DistrictID + '">' + b.Name + '</option>')
+                });
+            });
+        });
+
+    });
+
+
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "/tblCustomerAM2/GetSession",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                var arr = response.split(",");
+
+                $("#province").empty();
+                var $province = $("#province");
+                var url = $province.data("url") + '?BranchID=' + arr[0];
+                $.getJSON(url, function (branchToProvinces) {
+                    $.each(branchToProvinces, function (a, b) {
+                        $province.append('<option value ="' + b.ProvinceID + '">' + b.Name + '</option>')
+                    });
+                });
+
+                $("#area").empty();
+                var $area = $("#area");
+                var url = $area.data("url") + '?ProvinceID=' + arr[1];
+                $.getJSON(url, function (provinceToArea) {
+                    $.each(provinceToArea, function (a, b) {
+                        $area.append('<option value ="' + b.AreaID + '">' + b.Name + '</option>')
+                    });
+                });
+
+                $("#district").empty();
+                var $district = $("#district");
+                var url = $district.data("url") + '?AreaID=' + arr[2];
+                $.getJSON(url, function (areaTodistrict) {
+                    $.each(areaTodistrict, function (a, b) {
+                        $district.append('<option value ="' + b.DistrictID + '">' + b.Name + '</option>')
+                    });
+                });
+
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+
+    });
+
+</script>
+<table class="table">
+    <tr>
+        <th>
+            รูปภาพ
+        </th>
+        <th>
+            Customer ID
+        </th>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            จังหวัด
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src=" @Url.Content(@item.CustImg)" style="width:120px;height:60px">
+            </td>
+
+            <td>
+                <h2> @Html.DisplayFor(modelItem => item.CustomerID) </h2>
+            </td>
+
+            <td>
+                <h2> @Html.ActionLink(item.CustName, "Details", new { id = item.CustomerID }) </h2>
+            </td>
+            <td>
+                <h2> @Html.DisplayFor(modelItem => item.tblProvince.ProvinceName) </h2>
+            </td>
+
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="CSS/style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="/crystalreportviewers13/js/crviewer/crv.js"></script>
+    <%--<script type="text/javascript" src="/aspnet_client/system_web/4_0_30319/crystalreportviewers13/js/crviewer/crv.js"></script>--%>
+    <style type="text/css">
+        .auto-style2 {
+            left: 0px;
+            top: 0px;
+        }
+
+        .auto-style5 {
+            left: 0px;
+            top: 0px;
+            width: 52px;
+            height: 48px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="CSS/responsive-menu.css" rel="stylesheet" />
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server" autocomplete="off">
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <div class="topnav" id="myTopnav" style="z-index: 2">
+            <a href="https://www.unitedfoods.co.th">
+              <img id="logo" src="United-food2222_1.jpg" style="text-align: left;" /></a>
+            <a href="Index.aspx"><i class="fa fa-sign-in"></i>&nbsp;Sign-In</a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa fa-newspaper-o"></i>&nbsp;All Cash Report
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="AllCashReport_V2.aspx"><i class="fa fa-newspaper-o"></i>&nbsp;ALL CASH Target by Area</a>
+                    <%--<a href="AllCashReport.aspx"><i class="fa fa-newspaper-o"></i>Old Report</a>--%>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa fa-newspaper-o"></i>&nbsp;Forecast Reports
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="ForecashReportTK.aspx"><i class="fa fa-newspaper-o"></i>&nbsp;Forecast Report</a>
+
+                </div>
+            </div>
+            <a href="Index.aspx?ClearSessionFlag=1"><i class="fa fa-sign-out"></i>&nbsp;Sign-Out</a>
+           
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+
+     
+        <div class="" style="z-index: -1">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+        <div style="text-align: center;" class="auto-style2">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
+</body>
+
+
+</html>

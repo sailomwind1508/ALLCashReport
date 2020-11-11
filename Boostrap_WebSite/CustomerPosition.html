@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #map {
+            height: 100vh;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            width: 100vw;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+
+
+</head>
+<body>
+    <div id="mapBounds"></div>
+    <div id="map"></div>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var locations = url.searchParams.get("custInfo");
+
+            if (locations != null && locations != undefined) {
+                initMap(locations);
+            }
+        });
+        //location.reload();
+
+        var map;
+        var bounds;
+
+        function initMap(locations) {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 5,
+                center: new google.maps.LatLng(13.6101406, 100.7199811),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            google.maps.event.addListener(map, 'bounds_changed', function () {
+                bounds = map.getBounds();
+                ne = bounds.getNorthEast();
+                sw = bounds.getSouthWest();
+                document.getElementById('mapBounds').innerHTML = bounds.toUrlValue(6);
+                TestMarker(locations);
+
+            });
+        }
+
+        function addMarker(locations) {
+            var infowindow = new google.maps.InfoWindow;
+
+            var marker, i;
+
+            if (locations != null && locations != undefined) {
+    
+                var _data = locations.split("|");
+                var _lat = _data[0];
+                var _lng = _data[1];
+                var cust_name = 'ร้าน : ' + _data[2];
+                var address = _data[3];
+                var tel = 'โทร. ' + _data[4];
+                var img_path = _data[5];
+
+                document.title = cust_name;
+
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(_lat, _lng),
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+
+                    var point = new google.maps.LatLng(
+                        parseFloat(_lat),
+                        parseFloat(_lng));
+
+                    var infowincontent = document.createElement('div');
+                    var strong = document.createElement('strong');
+                    strong.textContent = cust_name
+                    infowincontent.appendChild(strong);
+                    infowincontent.appendChild(document.createElement('br'));
+
+                    var text = document.createElement('text');
+                    text.textContent = address
+                    infowincontent.appendChild(text);
+                    infowincontent.appendChild(document.createElement('br'));
+
+                    text = document.createElement('text');
+                    text.textContent = tel;
+                    infowincontent.appendChild(text);
+                    infowincontent.appendChild(document.createElement('br'));
+
+                    var _img = img_create(img_path, '', '')
+                    //_img.attributes('width', '50px;');
+                    infowincontent.appendChild(_img);
+
+                    return function () {
+                        infowindow.setContent(infowincontent);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+            
+        }
+
+        // Testing the addMarker function
+        function TestMarker(locations) {
+            addMarker(locations);
+        }
+
+
+
+
+
+
+
+
+        function initMap2(locations) {
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 5,
+                center: new google.maps.LatLng(13.6101406, 100.7199811),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var infowindow = new google.maps.InfoWindow;
+
+            var marker, i;
+
+
+            if (locations != null && locations != undefined) {
+
+                var _data = locations.split("|");
+                var _lat = _data[0];
+                var _lng = _data[1];
+                var cust_name = 'ร้าน : ' + _data[2];
+                var address = _data[3];
+                var tel = 'โทร. ' + _data[4];
+                var img_path = _data[5];
+
+                document.title = cust_name;
+
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(_lat, _lng),
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+
+
+                    var point = new google.maps.LatLng(
+                        parseFloat(_lat),
+                        parseFloat(_lng));
+
+                    var infowincontent = document.createElement('div');
+                    var strong = document.createElement('strong');
+                    strong.textContent = cust_name
+                    infowincontent.appendChild(strong);
+                    infowincontent.appendChild(document.createElement('br'));
+
+                    var text = document.createElement('text');
+                    text.textContent = address
+                    infowincontent.appendChild(text);
+                    infowincontent.appendChild(document.createElement('br'));
+
+                    text = document.createElement('text');
+                    text.textContent = tel;
+                    infowincontent.appendChild(text);
+                    infowincontent.appendChild(document.createElement('br'));
+
+                    var _img = img_create(img_path, '', '')
+                    //_img.attributes('width', '50px;');
+                    infowincontent.appendChild(_img);
+
+                    return function () {
+                        infowindow.setContent(infowincontent);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+        }
+
+        function img_create(src, alt, title) {
+            var img = document.createElement('img');
+            img.src = src;
+            if (alt != null) img.alt = alt;
+            if (title != null) img.title = title;
+            return img;
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACuCBVPmskPtdqdP-cl9do0-W3ZEr6OVc&callback=initMap">
+    </script>
+</body>
+</html>

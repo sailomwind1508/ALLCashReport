@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #map {
+            height: 100vh;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            width: 100vw;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var custInfo = url.searchParams.get("custInfo");
+
+            alert(custInfo);
+            initMap(custInfo);
+        });
+
+        function initMap(locations) {
+
+            try {
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 5,
+                    center: new google.maps.LatLng(13.6101406, 100.7199811),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+
+                var infowindow = new google.maps.InfoWindow;
+
+                var marker, i;
+
+
+                for (i = 0; i < locations[0].rowCount; i++) {
+                    alert(locations[i].rowCount);
+
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+                        map: map
+                    });
+
+                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+
+                        var name = locations[i].name;
+                        var address = locations[i].address;
+                        var tel = locations[i].tel;
+                        var cust_img = locations[i].custImg;
+                        var point = new google.maps.LatLng(
+                            parseFloat(locations[i].lat),
+                            parseFloat(locations[i].lng));
+
+                        var infowincontent = document.createElement('div');
+                        var strong = document.createElement('strong');
+                        strong.textContent = name;
+                        infowincontent.appendChild(strong);
+                        infowincontent.appendChild(document.createElement('br'));
+
+                        var text = document.createElement('text');
+                        text.textContent = address;
+                        infowincontent.appendChild(text);
+                        infowincontent.appendChild(document.createElement('br'));
+
+                        text = document.createElement('text');
+                        text.textContent = tel;
+                        infowincontent.appendChild(text);
+                        infowincontent.appendChild(document.createElement('br'));
+
+                        var _img = img_create(cust_img, '', '')
+                        //_img.attributes('width', '50px;');
+                        infowincontent.appendChild(_img);
+
+                        return function () {
+                            infowindow.setContent(infowincontent);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+
+            } catch (e) {
+                alert(e.message);
+            }
+        }
+
+        function img_create(src, alt, title) {
+            var img = document.createElement('img');
+            img.src = src;
+            if (alt != null) img.alt = alt;
+            if (title != null) img.title = title;
+            return img;
+        }
+    </script>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="js/googlemap.js"></script>
+
+</body>
+</html>

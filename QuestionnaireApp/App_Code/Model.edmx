@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QUESTIONNAIREModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_CustImage">
+          <Key>
+            <PropertyRef Name="CustImageID" />
+          </Key>
+          <Property Name="CustImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustImage" Type="image" />
+        </EntityType>
+        <EntityType Name="tbl_Questionnaire">
+          <Key>
+            <PropertyRef Name="PK" />
+          </Key>
+          <Property Name="PK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionnaireID" Type="int" />
+          <Property Name="Topic" Type="nvarchar" MaxLength="255" />
+          <Property Name="CustomerID" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmpID" Type="nvarchar" MaxLength="20" />
+          <Property Name="SalAreaID" Type="nvarchar" MaxLength="20" />
+          <Property Name="BranchID" Type="nvarchar" MaxLength="20" />
+          <Property Name="CustImageID" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="20" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_QuestionnaireDetails">
+          <Key>
+            <PropertyRef Name="QuestionnaireDetailsID" />
+          </Key>
+          <Property Name="QuestionnaireDetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionnaireID" Type="int" />
+          <Property Name="Seq" Type="int" />
+          <Property Name="Question" Type="nvarchar" MaxLength="150" />
+          <Property Name="SelectFlag" Type="bit" />
+          <Property Name="Score" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="20" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="QUESTIONNAIREModelStoreContainer">
+          <EntitySet Name="tbl_CustImage" EntityType="Self.tbl_CustImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Questionnaire" EntityType="Self.tbl_Questionnaire" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_QuestionnaireDetails" EntityType="Self.tbl_QuestionnaireDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QUESTIONNAIREModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_CustImage">
+          <Key>
+            <PropertyRef Name="CustImageID" />
+          </Key>
+          <Property Name="CustImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbl_Questionnaire">
+          <Key>
+            <PropertyRef Name="PK" />
+          </Key>
+          <Property Name="PK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionnaireID" Type="Int32" />
+          <Property Name="Topic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SalAreaID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BranchID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CustImageID" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_QuestionnaireDetails">
+          <Key>
+            <PropertyRef Name="QuestionnaireDetailsID" />
+          </Key>
+          <Property Name="QuestionnaireDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionnaireID" Type="Int32" />
+          <Property Name="Seq" Type="Int32" />
+          <Property Name="Question" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SelectFlag" Type="Boolean" />
+          <Property Name="Score" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="QUESTIONNAIREEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_CustImage" EntityType="Self.tbl_CustImage" />
+          <EntitySet Name="tbl_Questionnaire" EntityType="Self.tbl_Questionnaire" />
+          <EntitySet Name="tbl_QuestionnaireDetails" EntityType="Self.tbl_QuestionnaireDetails" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QUESTIONNAIREModelStoreContainer" CdmEntityContainer="QUESTIONNAIREEntities">
+          <EntitySetMapping Name="tbl_CustImage">
+            <EntityTypeMapping TypeName="QUESTIONNAIREModel.tbl_CustImage">
+              <MappingFragment StoreEntitySet="tbl_CustImage">
+                <ScalarProperty Name="CustImageID" ColumnName="CustImageID" />
+                <ScalarProperty Name="CustImage" ColumnName="CustImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Questionnaire">
+            <EntityTypeMapping TypeName="QUESTIONNAIREModel.tbl_Questionnaire">
+              <MappingFragment StoreEntitySet="tbl_Questionnaire">
+                <ScalarProperty Name="PK" ColumnName="PK" />
+                <ScalarProperty Name="QuestionnaireID" ColumnName="QuestionnaireID" />
+                <ScalarProperty Name="Topic" ColumnName="Topic" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="SalAreaID" ColumnName="SalAreaID" />
+                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+                <ScalarProperty Name="CustImageID" ColumnName="CustImageID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_QuestionnaireDetails">
+            <EntityTypeMapping TypeName="QUESTIONNAIREModel.tbl_QuestionnaireDetails">
+              <MappingFragment StoreEntitySet="tbl_QuestionnaireDetails">
+                <ScalarProperty Name="QuestionnaireDetailsID" ColumnName="QuestionnaireDetailsID" />
+                <ScalarProperty Name="QuestionnaireID" ColumnName="QuestionnaireID" />
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="SelectFlag" ColumnName="SelectFlag" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

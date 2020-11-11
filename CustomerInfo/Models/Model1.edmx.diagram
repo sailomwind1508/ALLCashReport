@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c87355de66bc4c2cbd297792a8134415" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="CustInfoModel.Branch" Width="1.5" PointX="6.125" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.SalArea" Width="1.5" PointX="7.875" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.tblAreaToDistrict" Width="1.5" PointX="8.125" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.tblBranchToProvince" Width="1.5" PointX="10.125" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.tblCustomerAM2" Width="1.5" PointX="5.375" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.tblCustomerW" Width="1.5" PointX="5.375" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.tblProvince" Width="1.5" PointX="3.125" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.tblProvinceToArea" Width="1.5" PointX="11.125" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.tblSalAreaToProvince" Width="1.5" PointX="10" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustInfoModel.Zone" Width="1.5" PointX="3.125" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="CustInfoModel.FK__tblSalAre__Branc__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="CustInfoModel.FK__tblSalAre__SalAr__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="CustInfoModel.FK__tblCustom__Provi__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="CustInfoModel.FK__tblCustom__Provi__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="CustInfoModel.FK__tblSalAre__Provi__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="CustInfoModel.FK__tblCustom__ZoneI__693CA210" />
+        <AssociationConnector Association="CustInfoModel.FK__tblBranch__Provi__6A30C649" />
+        <EntityTypeShape EntityType="CustInfoModel.tblArea" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CustInfoModel.tblDistrict" Width="1.5" PointX="0.75" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

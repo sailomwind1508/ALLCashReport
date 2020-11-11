@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="jquery-1.12.4.js"></script>
+</head>
+<body>
+
+    <!--<img src="images/planets.gif" style="width:500px; height:400px;" alt="Planets" usemap="#planetmap">
+
+    <map id="planetmap" name="planetmap">
+        <area id="machine1" shape="rect" coords="280,480,360,675" alt="machine1" href="ms-excel:ofe|u|file:///D://MAY2020DailyReport.xlsx">
+        <area id="machine2" shape="rect" coords="600,440,678,680" alt="machine2" href="mercur.html">
+        <area id="machine3" shape="rect" coords="745,350,820,700" alt="machine3" href="venus.html">
+
+        <a href="file:///SERVER/PATH/FILE.xls">Click</a>
+    </map>-->
+    <img src="images/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+    <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+        <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+        <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+    </map>
+
+    <script type="text/javascript" language="javascript">
+        $(function () {
+            //$("[id*=lSun]").attr("href")
+            $("[id*=lSun]").click(function () {
+
+                //alert(1);
+                //test();
+                //RunFile();
+                //var myApp = new ActiveXObject("Excel.Application");
+
+                //if (myApp != null) {
+                //    myApp.visible = true;
+                //    Book = myApp.workbooks.open("d:/PriceDailyReport.xlsx");
+                //    var excel_sheet = Book.Worksheets(sheet).Activate;
+                //    myApp.range(f_range).Select;
+                //}
+
+                //else {
+                //    alert("Cannot open Excel application");
+                //}
+
+                //WshShell = new ActiveXObject("WScript.Shell");
+                //WshShell.Run("d:/PriceDailyReport.xlsx", 1, false);
+            });
+        });
+
+        function readdata(y, x) {
+
+            // Use the <input type='file'...> object to get a filename without showing the object.
+            document.all["fileInput"].click();
+            var fileName = "d:/PriceDailyReport.xlsx";//document.all["fileInput"].value;
+
+            try {
+                var excel = new ActiveXObject("Excel.Application");
+                excel.Visible = false;
+                var excel_file = excel.Workbooks.Open(fileName);
+
+                var excel_sheet = excel_file.Worksheets("Sheet1");
+                //  var data = excel_sheet.Cells(x, y).Value;
+                var data;
+                for (; excel_sheet.Cells(x, y).Value.length > 0; x++) {
+                    data[i][0] = excel_sheet.Cells(x, y).Value;
+                    data[i][1] = excel_sheet.Cells(x, y + 1).Value;
+                }
+                drawWithexcelValue(data);
+            }
+            catch (ex) {
+                alert(ex);
+            }
+
+            // This will show the data.
+            alert(data);
+
+        }
+
+        function test() {
+            var Excel = new ActiveXObject("Excel.Application");
+            Excel.Visible = true;
+            Excel.Workbooks.Open("d:/PriceDailyReport.xlsx");
+        }
+
+        function RunFile() {
+            WshShell = new ActiveXObject("WScript.Shell");
+            WshShell.Run("d:/PriceDailyReport.xlsx", 1, false);
+        }
+    </script>
+</body>
+</html>
